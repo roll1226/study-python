@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  python-study:
+    build: .
+    container_name: python-study-env
+    volumes:
+      - ./app:/app
+      - ./notebooks:/notebooks
+    ports:
+      - "8888:8888"  # Jupyter Notebook
+      - "5001:5000"  # Flask開発サーバー
+    environment:
+      - PYTHONPATH=/app
+    working_dir: /app
+    command: >
+      bash -c "
+      echo 'Python学習環境を起動中...' &&
+      jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password='' &
+      echo 'Jupyter Notebookが起動しました: http://localhost:8888' &&
+      echo 'Pythonコードの実行やライブラリのテストができます' &&
+      tail -f /dev/null
+      "
+    stdin_open: true
+    tty: true
+
+  # データベース学習用（PostgreSQL）
+  postgres:
+    image: postgres:15
+    container_name: python-study-db
+    environment:
+      POSTGRES_DB: study_db
+      POSTGRES_USER: student
+      POSTGRES_PASSWORD: password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./sql:/docker-entrypoint-initdb.d
+
+  # Redis学習用
+  redis:
+    image: redis:7-alpine
+    container_name: python-study-redis
+    ports:
+      - "6379:6379"
+
+volumes:
+  postgres_data:

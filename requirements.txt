@@ -1,0 +1,44 @@
+# 基本的なライブラリ
+jupyter
+ipython
+notebook
+
+# データサイエンス・分析
+numpy
+pandas
+matplotlib
+seaborn
+plotly
+scipy
+scikit-learn
+
+# ウェブ開発
+flask
+fastapi
+requests
+beautifulsoup4
+
+# データベース
+psycopg2-binary
+sqlalchemy
+pymongo
+redis
+
+# ユーティリティ
+python-dotenv
+pyyaml
+click
+
+# テスト
+pytest
+pytest-cov
+
+# 機械学習（オプション）
+tensorflow
+torch
+transformers
+
+# その他便利なツール
+rich
+typer
+httpx

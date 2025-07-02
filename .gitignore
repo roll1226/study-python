@@ -1,0 +1,46 @@
+# Python関連
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.env
+*.venv
+.env
+.venv
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+
+# Docker関連
+*.log
+docker-compose.override.yml
+
+# OS/エディタ関連
+.DS_Store
+.idea/
+.vscode/
+*.swp
+
+# その他
+*.sqlite3
+*.db
+*.bak
+*.tmp
+*.old
+*.orig
+*.out
+*.log
+*.pid
+*.seed
+*.lock
+*.gz
+*.zip
+*.tar
+*.rar
+*.7z
+*.bak
+*.tmp
+*.swp
+*.swo
+*.swn
+*.swn
