@@ -44,3 +44,6 @@ docker-compose.override.yml
 *.swo
 *.swn
 *.swn
+
+# ゴミ箱関連
+.Trash/
